@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Tetris</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="game-area">
+        <canvas id="tetris" aria-label="Tetris game board" role="img"></canvas>
+        <div id="overlay" aria-hidden="true"></div>
+      </div>
+
+      <aside id="sidebar">
+        <div class="brand">
+          <div class="brand__title">NEON TETRIS</div>
+          <div class="brand__subtitle">sci-fi arcade control deck</div>
+        </div>
+
+        <div class="card stats">
+          <div class="stat">
+            <div class="stat__label">SCORE</div>
+            <div class="stat__value" id="score">0</div>
+          </div>
+          <div class="stat">
+            <div class="stat__label">LEVEL</div>
+            <div class="stat__value" id="level">1</div>
+          </div>
+          <div class="stat">
+            <div class="stat__label">LINES</div>
+            <div class="stat__value" id="lines">0</div>
+          </div>
+          <div class="stat">
+            <div class="stat__label">MOODE</div>
+            <div class="stat__value" id="lines">0</div>
+          </div>
+        </div>
+
+        <div class="card next">
+          <div class="card__title">NEXT BLOCKS</div>
+          <canvas id="next-canvas" aria-label="Next blocks preview" role="img"></canvas>
+        </div>
+
+        <div class="card controls">
+          <div class="card__title">CONTROLS</div>
+          <div class="btn-row">
+            <button class="btn" id="startBtn" type="button">Start</button>
+            <button class="btn btn--secondary" id="pauseBtn" type="button">Pause</button>
+          </div>
+          <div class="hint">
+            <div><span class="key">←</span><span class="key">→</span> move</div>
+            <div><span class="key">↑</span> rotate</div>
+            <div><span class="key">↓</span> soft drop</div>
+            <div><span class="key">Space</span> hard drop</div>
+            <div><span class="key">P</span> pause</div>
+          </div>
+        </div>
+
+        <div class="card options">
+          <div class="card__title">OPTIONS</div>
+          <label class="toggle">
+            <input type="checkbox" id="optGhost" checked />
+            <span>Ghost piece</span>
+          </label>
+          <label class="toggle">
+            <input type="checkbox" id="optGrid" checked />
+            <span>Grid</span>
+          </label>
+          <label class="toggle">
+            <input type="checkbox" id="optHardDrop" checked />
+            <span>Hard drop (Space)</span>
+          </label>
+        </div>
+
+        <div class="footer">
+          <span class="pill">Tip:</span> click the board to focus controls
+        </div>
+      </aside>
+    </div>
+
+    <div id="sr-status" class="sr-only" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
+
